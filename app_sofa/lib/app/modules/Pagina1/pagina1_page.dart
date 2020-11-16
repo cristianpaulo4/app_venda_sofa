@@ -93,6 +93,9 @@ class _Pagina1PageState extends ModularState<Pagina1Page, Pagina1Controller> {
                 itemBuilder: (_, i) {
                   return CardItem1(
                     uri: imgs[i],
+                    onPressed: () {
+                      Modular.to.pushNamed('/produto', arguments: imgs[i]);
+                    },
                   );
                 },
               ),
@@ -120,15 +123,12 @@ class _Pagina1PageState extends ModularState<Pagina1Page, Pagina1Controller> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (_, i) {
-                return Hero(
-                  tag: imgs[i],
-                  child: Item(
-                    uri: imgs[i],
-                    onPressed: () {
-                      Modular.to.pushNamed('/produto', arguments: imgs[i]);
-                    },
-                    valor: 150.0,
-                  ),
+                return Item(
+                  uri: imgs[i],
+                  onPressed: () {
+                    Modular.to.pushNamed('/produto', arguments: imgs[i]);
+                  },
+                  valor: 150.0,
                 );
               },
               semanticChildCount: 2,

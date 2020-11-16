@@ -13,7 +13,7 @@ class Item extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(25),
         decoration: BoxDecoration(
           color: Colors.grey.shade200,
           borderRadius: BorderRadius.circular(40),
@@ -22,10 +22,13 @@ class Item extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(
-              uri,
-              height: 100,
-              width: 120,
+            Hero(
+              tag: uri,
+              child: Image.asset(
+                uri,
+                height: 100,
+                width: 120,
+              ),
             ),
             Expanded(
               child: Container(),

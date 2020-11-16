@@ -19,13 +19,13 @@ class Item extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: 10,
-            ),
             Image.asset(
               uri,
               height: 100,
+              width: 120,
             ),
             Expanded(
               child: Container(),
@@ -47,7 +47,7 @@ class Item extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
           ],
         ),

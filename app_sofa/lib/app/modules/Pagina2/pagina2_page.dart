@@ -91,15 +91,12 @@ class _Pagina2PageState extends ModularState<Pagina2Page, Pagina2Controller> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (_, i) {
-                return Hero(
-                  tag: imgs[i],
-                  child: Item(
-                    uri: imgs[i],
-                    onPressed: () {
-                      Modular.to.pushNamed('/produto', arguments: imgs[i]);
-                    },
-                    valor: 150.0,
-                  ),
+                return Item(
+                  uri: imgs[i],
+                  onPressed: () {
+                    Modular.to.pushNamed('/produto', arguments: imgs[i]);
+                  },
+                  valor: 150.0,
                 );
               },
               semanticChildCount: 2,
